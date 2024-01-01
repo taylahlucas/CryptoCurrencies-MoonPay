@@ -1,16 +1,23 @@
 import React from 'react';
-import { View } from 'react-native';
+import { CurrencyItem } from '../../../utils/CustomInterfaces';
 import ScrollableList from '../../general/ScrollableList/ScrollableList.native';
 import CurrencyListItem from './CurrencyListItem.native';
+import { styles } from './CurrencyListStyles.native';
 
-const CurrencyList = () => {
+interface CurrencyListProps {
+  data: CurrencyItem[];
+}
+
+const CurrencyList = ({ data }: CurrencyListProps) => {
   return (
-    <ScrollableList>
-      {/* <View style={{ backgroundColor: 'red', width: '100%', height: 45 }} />
-      <View style={{ backgroundColor: 'blue', width: '100%', height: 45 }} /> */}
-      <CurrencyListItem />
-      <CurrencyListItem />
-      <CurrencyListItem />
+    <ScrollableList customStyle={styles.currencyList}>
+      {data.map((item: CurrencyItem, index) => (
+        <CurrencyListItem 
+          key={index}
+          code={item.code} 
+          name={item.name} 
+         />
+      ))}
     </ScrollableList>
   );
 };

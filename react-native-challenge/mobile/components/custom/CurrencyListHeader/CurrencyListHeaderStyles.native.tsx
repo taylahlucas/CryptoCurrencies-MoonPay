@@ -1,16 +1,28 @@
 import { StyleSheet } from 'react-native';
+import { DEFAULT_MARGIN } from '../../../utils/Constants';
 
 export const styles = StyleSheet.create({
   headerContainer: {
     height: 140,
+    marginTop: DEFAULT_MARGIN,
     flexDirection: 'row'
   },
   filterOptionsContainer: {
     flexDirection: 'column',
     justifyContent: 'space-evenly',
-    padding: 16,
-    marginLeft: 16,
+    padding: DEFAULT_MARGIN,
+    marginLeft: DEFAULT_MARGIN,
+  },
+  sortOptionsContainer: {
+    height: 45,
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
     backgroundColor: 'red'
+  },
+  sortOptionsItem: {
+    width: 100,
+    marginLeft: 24
   },
   filterItemContainer: {
     flexDirection: 'row',
@@ -21,11 +33,11 @@ export const styles = StyleSheet.create({
     height: 25,
     borderRadius: 100,
     backgroundColor: "blue",
-    marginRight: 16
+    marginRight: DEFAULT_MARGIN
   },
   shuffleContainer: {
     alignSelf: 'center',
     position: 'absolute',
-    right: 32
+    right: DEFAULT_MARGIN * 2
   }
 });
