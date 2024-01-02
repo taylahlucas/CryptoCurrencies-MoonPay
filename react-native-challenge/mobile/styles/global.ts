@@ -1,8 +1,12 @@
 import { StyleSheet } from 'react-native';
 
-// TODO: Text styles for iOS and android
 export const textStyles = StyleSheet.create({
   standardText: {
-    fontSize: 18
+    fontSize: 18,
+    fontWeight: '300'
+  },
+  boldText: {
+    fontSize: 18,
+    fontWeight: '500'
   }
 });

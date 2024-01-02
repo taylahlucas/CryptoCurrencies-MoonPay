@@ -1,7 +1,7 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 import { styles } from './CurrencyListStyles.native';
-import { textStyles } from '../../../styles/global';
+import Text from '../../general/Text/Text.native';
 
 interface CurrencyListItemProps {
   code: string;
@@ -11,20 +11,16 @@ interface CurrencyListItemProps {
 const CurrencyListItem = ({ code, name }: CurrencyListItemProps) => {
   return (
     <View style={styles.itemContainer}>
-      <Text 
-        style={{ 
-          ...styles.itemCode, 
-          ...textStyles.standardText
-        }}
+      <Text
+        title={code}
+        style={styles.itemCode}
         numberOfLines={2}
-      >{code}</Text>
-      <Text 
-        style={{ 
-          ...styles.itemName, 
-          ...textStyles.standardText
-        }}
+      />
+      <Text
+        title={name}
+        style={styles.itemName}
         numberOfLines={2}
-        >{name}</Text>
+      />
     </View>
   );
 };

@@ -18,7 +18,7 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'flex-start',
     alignItems: 'center',
-    backgroundColor: 'red'
+    backgroundColor: '#721491'
   },
   sortOptionsItem: {
     width: 100,

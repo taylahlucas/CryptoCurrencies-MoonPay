@@ -1,17 +1,25 @@
 import React from 'react';
-import { View, Text, Pressable } from 'react-native';
+import { View, Pressable } from 'react-native';
 import { styles } from './CurrencyListHeaderStyles.native';
-import { textStyles } from '../../../styles/global';
+import Text from '../../general/Text/Text.native';
 
 interface CurrencyListFilterItemProps {
   title: string;
+  active: boolean;
+  onPress: () => void;
 };
 
-const CurrencyListFilterItem = ({ title }: CurrencyListFilterItemProps) => {
+const CurrencyListFilterItem = ({ title, active = false, onPress }: CurrencyListFilterItemProps) => {
   return (
     <View style={styles.filterItemContainer}>
-      <Pressable style={styles.filterButton} />
-      <Text style={textStyles.standardText}>{title}</Text>
+      <Pressable 
+        style={{
+          ...styles.filterButton,
+          backgroundColor: active ? 'blue' : 'red'
+        }} 
+        onPress={onPress} 
+      />
+      <Text title={title} />
     </View>
   );
 };

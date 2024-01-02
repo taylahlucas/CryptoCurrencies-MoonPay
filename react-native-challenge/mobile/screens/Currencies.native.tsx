@@ -1,42 +1,26 @@
-import React, { useEffect, useState } from 'react';
-import { Alert, View } from 'react-native';
-import axios from 'axios';
+import React from 'react';
+import { View } from 'react-native';
 import CurrencyList from '../components/custom/CurrencyList/CurrencyList.native';
 import CurrencyListHeader from '../components/custom/CurrencyListHeader/CurrencyListHeader.native';
-import { CurrencyItem } from '../utils/CustomInterfaces';
+import useGetCurrencyList from '../components/custom/CurrencyList/hooks/useGetCurrencyList.native';
+import useMainState from '../redux/hooks/useMainState';
+import Condition from '../components/general/Condition.native';
+import Loading from '../components/general/Loading/Loading.native';
 
 const Currencies = () => {
-  const [data, setData] = useState<CurrencyItem[]>([]);
+  const { currencyData } = useMainState();
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response  = await axios.get('https://api.moonpay.com/v3/currencies');
-        const currencyItems = response.data.map((item: any) => {
-          return {
-            id: item.id,
-            code: item.code,
-            name: item.name,
-            supportedInUS: false,
-            supportedInTest: item.supportsTestMode ?? false
-          }
-        });
-
-        setData(currencyItems);
-      }
-      catch (error) {
-        console.error('Error fetching data:', error);
-        Alert.alert("Error fetching data");
-      }
-    };
-
-    fetchData();
-  }, []); 
+  useGetCurrencyList();
 
   return (
     <View>
       <CurrencyListHeader />
-      <CurrencyList data={data} />
+      <Condition 
+        condition={!!currencyData && currencyData.length > 0}
+        conditionalElement={<Loading />}
+      >
+        <CurrencyList />
+      </Condition>
     </View>
   );
 };

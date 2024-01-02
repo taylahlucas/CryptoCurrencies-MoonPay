@@ -1,16 +1,32 @@
 import React from 'react';
-import { Pressable, View, Text} from 'react-native';
+import { View } from 'react-native';
+import useMainDispatch from '../../../redux/hooks/useMainDispatch';
+import useMainState from '../../../redux/hooks/useMainState';
 import { styles } from './CurrencyListHeaderStyles.native';
+import CurrencyListSortItem from './CurrencyListSortItem.native';
 
 const CurrencyListSortOptions = () => {
+  const { setSortOptions } = useMainDispatch();
+  const { sortOptions } = useMainState();
+  
   return (
     <View style={styles.sortOptionsContainer}>
-      <Pressable style={styles.sortOptionsItem}>
-        <Text>Code</Text>
-      </Pressable>
-      <Pressable style={styles.sortOptionsItem}>
-        <Text>Name</Text>
-      </Pressable>
+      <CurrencyListSortItem 
+        title={'Code'}
+        active={sortOptions.code === 'ascend'}
+        onPress={(): void => setSortOptions({
+          code: sortOptions.code === 'ascend' ? 'descend' : 'ascend',
+          name: 'none'
+        })}
+      />
+      <CurrencyListSortItem 
+        title={'Name'}
+        active={sortOptions.name === 'ascend'}
+        onPress={(): void => setSortOptions({
+          code: 'none',
+          name: sortOptions.name === 'ascend' ? 'descend' : 'ascend',
+        })}
+      />
     </View>
   );
 };

@@ -1,11 +1,14 @@
 import React from 'react';
 import { View, Button } from 'react-native';
 import { styles } from './CurrencyListHeaderStyles.native';
+import useShuffleCurrencyList from './hooks/useShuffleCurrencyList.native';
 
 const CurrencyListShuffle = () => {
+  const { shuffleCurrencyList } = useShuffleCurrencyList();
+
   return (
     <View style={styles.shuffleContainer}>
-      <Button title={'Shuffle'} onPress={(): void => console.log("SHUFFLE")} />
+      <Button title={'Shuffle'} onPress={shuffleCurrencyList} />
     </View>
   );
 };
