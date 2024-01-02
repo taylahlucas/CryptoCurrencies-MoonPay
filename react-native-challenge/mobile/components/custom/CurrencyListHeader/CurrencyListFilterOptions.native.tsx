@@ -4,6 +4,7 @@ import { styles } from './CurrencyListHeaderStyles.native';
 import CurrencyListFilterItem from './CurrencyListFilterItem.native';
 import useMainDispatch from '../../../redux/hooks/useMainDispatch';
 import useMainState from '../../../redux/hooks/useMainState';
+import { supportedInUSString, supportedInTestString } from '../../../utils/Constants';
 
 const CurrencyListFilterOptions = () => {
   const { setFilterOptions } = useMainDispatch();
@@ -12,7 +13,7 @@ const CurrencyListFilterOptions = () => {
   return (
     <View style={styles.filterOptionsContainer}>
       <CurrencyListFilterItem 
-        title={'Supported in US'} 
+        title={supportedInUSString} 
         active={filterOptions.supportedInUS}
         onPress={(): void => setFilterOptions({
           ...filterOptions,
@@ -20,7 +21,7 @@ const CurrencyListFilterOptions = () => {
         })}
       />
       <CurrencyListFilterItem 
-        title={'Supported in Test Mode'}
+        title={supportedInTestString}
         active={filterOptions.supportedInTest}
         onPress={(): void => setFilterOptions({
           ...filterOptions,
