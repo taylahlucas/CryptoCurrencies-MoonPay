@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Button } from 'react-native';
-import { shuffleString } from '../../../utils/Constants';
+import { shuffleString } from '@utils/Constants';
 import { styles } from './CurrencyListHeaderStyles.native';
 import useShuffleCurrencyList from './hooks/useShuffleCurrencyList.native';
 

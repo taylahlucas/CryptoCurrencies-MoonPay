@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { DEFAULT_MARGIN } from '../../../utils/Constants';
+import { DEFAULT_MARGIN } from '@utils/Constants';
 
 export const styles = StyleSheet.create({
   headerContainer: {

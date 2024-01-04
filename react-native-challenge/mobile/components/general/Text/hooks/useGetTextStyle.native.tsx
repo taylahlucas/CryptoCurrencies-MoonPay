@@ -1,5 +1,5 @@
-import { textStyles } from '../../../../styles/global';
-import { TextType } from '../../../../utils/CustomTypes';
+import { textStyles } from '@styles/global';
+import { TextType } from '@utils/CustomTypes';
 
 const useGetTextStyle = () => {
   const getTextStyle = (style: TextType) => {

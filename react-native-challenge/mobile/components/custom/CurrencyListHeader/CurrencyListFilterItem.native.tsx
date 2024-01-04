@@ -1,17 +1,18 @@
 import React from 'react';
 import { View, Pressable } from 'react-native';
 import { styles } from './CurrencyListHeaderStyles.native';
-import Text from '../../general/Text/Text.native';
+import Text from '@components/general/Text/Text.native';
 
 interface CurrencyListFilterItemProps {
+  testID: string;
   title: string;
   active: boolean;
   onPress: () => void;
 };
 
-const CurrencyListFilterItem = ({ title, active = false, onPress }: CurrencyListFilterItemProps) => {
+const CurrencyListFilterItem = ({ testID, title, active = false, onPress }: CurrencyListFilterItemProps) => {
   return (
-    <View style={styles.filterItemContainer}>
+    <View testID={testID} style={styles.filterItemContainer}>
       <Pressable 
         style={{
           ...styles.filterButton,

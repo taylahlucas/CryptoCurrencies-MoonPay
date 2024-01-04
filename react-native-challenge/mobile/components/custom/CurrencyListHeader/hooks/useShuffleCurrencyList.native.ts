@@ -1,5 +1,5 @@
-import useMainDispatch from '../../../../redux/hooks/useMainDispatch';
-import useMainState from '../../../../redux/hooks/useMainState';
+import useMainDispatch from '@redux/hooks/useMainDispatch';
+import useMainState from '@redux/hooks/useMainState';
 
 
 const useShuffleCurrencyList = () => {

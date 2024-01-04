@@ -1,8 +1,8 @@
 import React from 'react';
 import { View } from 'react-native';
-import useMainDispatch from '../../../redux/hooks/useMainDispatch';
-import useMainState from '../../../redux/hooks/useMainState';
-import { codeString, nameString } from '../../../utils/Constants';
+import useMainDispatch from '@redux/hooks/useMainDispatch';
+import useMainState from '@redux/hooks/useMainState';
+import { codeString, nameString } from '@utils/Constants';
 import { styles } from './CurrencyListHeaderStyles.native';
 import CurrencyListSortItem from './CurrencyListSortItem.native';
 

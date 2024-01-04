@@ -2,9 +2,9 @@ import React from 'react';
 import { View } from 'react-native';
 import { styles } from './CurrencyListHeaderStyles.native';
 import CurrencyListFilterItem from './CurrencyListFilterItem.native';
-import useMainDispatch from '../../../redux/hooks/useMainDispatch';
-import useMainState from '../../../redux/hooks/useMainState';
-import { supportedInUSString, supportedInTestString } from '../../../utils/Constants';
+import useMainDispatch from '@redux/hooks/useMainDispatch';
+import useMainState from '@redux/hooks/useMainState';
+import { supportedInUSString, supportedInTestString } from '@utils/Constants';
 
 const CurrencyListFilterOptions = () => {
   const { setFilterOptions } = useMainDispatch();
@@ -12,7 +12,8 @@ const CurrencyListFilterOptions = () => {
 
   return (
     <View style={styles.filterOptionsContainer}>
-      <CurrencyListFilterItem 
+      <CurrencyListFilterItem
+        testID={'supported-in-US'}
         title={supportedInUSString} 
         active={filterOptions.supportedInUS}
         onPress={(): void => setFilterOptions({
@@ -21,6 +22,7 @@ const CurrencyListFilterOptions = () => {
         })}
       />
       <CurrencyListFilterItem 
+        testID={'supported-in-Test'}
         title={supportedInTestString}
         active={filterOptions.supportedInTest}
         onPress={(): void => setFilterOptions({

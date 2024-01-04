@@ -1,6 +1,18 @@
 {
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
-    "strict": true
+    "esModuleInterop": true,
+    "jsx": "react",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "baseUrl": "./",
+    "paths": {
+      "@components/*": ["mobile/components/*"],
+      "@redux/*": ["mobile/redux/*"],
+      "@screens/*": ["mobile/screens/*"],
+      "@styles/*": ["mobile/styles/*"],
+      "@utils/*": ["mobile/utils/*"]
+    }
   }
 }

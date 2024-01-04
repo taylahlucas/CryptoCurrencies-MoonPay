@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text as RNText, TextStyle } from 'react-native';
-import { TextType } from '../../../utils/CustomTypes';
+import { TextType } from '@utils/CustomTypes';
 import useGetTextStyle from './hooks/useGetTextStyle.native';
 
 interface TextInterface {

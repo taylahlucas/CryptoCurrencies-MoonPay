@@ -1,8 +1,7 @@
 import { useEffect } from 'react';
 import { Alert } from 'react-native';
 import axios from 'axios';
-import useMainDispatch from '../../../../redux/hooks/useMainDispatch';
-
+import useMainDispatch from '@redux/hooks/useMainDispatch';
 
 const useGetCurrencyList = () => {
   const { setCurrencyData, setFilteredCurrencyData } = useMainDispatch();
@@ -16,7 +15,7 @@ const useGetCurrencyList = () => {
             id: item.id,
             code: item.code,
             name: item.name,
-            supportedInUS: item.notAllowedCountries?.filter((item: string) => item === 'US' || item === 'CA').length === 0,
+            supportedInUS: item.isSupportedInUS ?? false,
             supportedInTest: item.supportsTestMode ?? false
           }
         });

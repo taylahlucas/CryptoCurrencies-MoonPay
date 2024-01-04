@@ -1,4 +1,4 @@
-import { MainState } from '../redux/MainState';
+import { MainState } from '@redux/MainState';
 import { SortOptionOrder } from './CustomTypes';
 
 export interface CurrencyItem {

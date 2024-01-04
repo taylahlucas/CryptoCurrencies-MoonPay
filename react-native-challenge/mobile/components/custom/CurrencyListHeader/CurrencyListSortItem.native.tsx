@@ -1,7 +1,7 @@
 import React from 'react';
 import { Pressable } from 'react-native';
 import { styles } from './CurrencyListHeaderStyles.native';
-import Text from '../../general/Text/Text.native';
+import Text from '@components/general/Text/Text.native';
 
 interface CurrencyListSortItemProps {
   title: string;

@@ -1,18 +1,21 @@
 import { useEffect } from 'react';
-import useMainDispatch from '../../../../redux/hooks/useMainDispatch';
-import useMainState from '../../../../redux/hooks/useMainState';
+import useMainDispatch from '@redux/hooks/useMainDispatch';
+import useMainState from '@redux/hooks/useMainState';
 
 const useFilterCurrencyList = () => {
   const { setFilteredCurrencyData } = useMainDispatch();
   const { filteredCurrencyData, currencyData, filterOptions, sortOptions } = useMainState();
 
   useEffect(() => {
-    setFilteredCurrencyData(currencyData.filter(item => 
-      item.supportedInTest === filterOptions.supportedInTest && item.supportedInUS === filterOptions.supportedInUS
-    ));
+    if (!!filterOptions) {
+      setFilteredCurrencyData(currencyData.filter(item => 
+        item.supportedInTest === filterOptions.supportedInTest && item.supportedInUS === filterOptions.supportedInUS
+      ));
+    }
   }, [filterOptions]);
 
   useEffect(() => {
+    // Only one option can be 'ascend' or 'descend' at any one time
     if (sortOptions.code !== 'none') {
       switch (sortOptions.code) {
         case 'ascend':

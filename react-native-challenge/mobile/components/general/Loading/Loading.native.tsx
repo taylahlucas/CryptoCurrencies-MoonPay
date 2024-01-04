@@ -1,8 +1,8 @@
 import React from 'react';
 import { View } from 'react-native';
-import Text from '../../general/Text/Text.native';
+import Text from '@components/general/Text/Text.native';
 import { styles } from './LoadingStyles.native';
-import { loadingString } from '../../../utils/Constants';
+import { loadingString } from '@utils/Constants';
 
 const Loading = () => {
   return (
