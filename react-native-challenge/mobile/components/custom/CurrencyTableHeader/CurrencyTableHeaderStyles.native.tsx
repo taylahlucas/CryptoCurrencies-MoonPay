@@ -15,6 +15,7 @@ export const styles = StyleSheet.create({
   },
   sortOptionsContainer: {
     height: 45,
+    paddingLeft: DEFAULT_MARGIN,
     flexDirection: 'row',
     justifyContent: 'flex-start',
     alignItems: 'center',
@@ -22,7 +23,6 @@ export const styles = StyleSheet.create({
   },
   sortOptionsItem: {
     width: 100,
-    marginLeft: 24
   },
   filterItemContainer: {
     flexDirection: 'row',

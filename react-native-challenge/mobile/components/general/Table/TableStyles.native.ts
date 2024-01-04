@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
-  scrollableContent: {
+  tableContainer: {
     width: '100%',
     alignItems: 'center', 
     alignSelf: 'center',

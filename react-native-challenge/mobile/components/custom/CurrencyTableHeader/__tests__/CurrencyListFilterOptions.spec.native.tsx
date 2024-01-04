@@ -1,10 +1,10 @@
 import React from 'react';
 import { render, fireEvent } from '@utils/TestLibraryUtils.native';
 import { initialState as mainState } from '@redux/MainState';
-import CurrencyListFilterOptions from '../CurrencyListFilterOptions.native';
+import CurrencyTableFilterOptions from '../CurrencyTableFilterOptions.native';
 import * as MainState from '@redux/MainState';
 
-describe('CurrencyListFilterOptions', () => {
+describe('CurrencyTableFilterOptions', () => {
   const initialState = {
     main: {
       ...mainState,
@@ -22,7 +22,7 @@ describe('CurrencyListFilterOptions', () => {
   });
 
   test('renders correctly', () => {
-    const { queryByTestId } = render(<CurrencyListFilterOptions />, { initialState });
+    const { queryByTestId } = render(<CurrencyTableFilterOptions />, { initialState });
 
     expect(queryByTestId('supported-in-US')).toBeTruthy();
     expect(queryByTestId('supported-in-Test')).toBeTruthy();
@@ -30,7 +30,7 @@ describe('CurrencyListFilterOptions', () => {
 
   test('toggles supportedInUS when clicked', () => {
 
-    const { queryByTestId } = render(<CurrencyListFilterOptions />, { initialState });
+    const { queryByTestId } = render(<CurrencyTableFilterOptions />, { initialState });
 
     const supportedInUSButton = queryByTestId('supported-in-US');
     fireEvent.press(supportedInUSButton);
@@ -42,7 +42,7 @@ describe('CurrencyListFilterOptions', () => {
   });
 
   test('toggles supportedInTest when clicked', () => {
-    const { queryByTestId } = render(<CurrencyListFilterOptions />, { initialState });
+    const { queryByTestId } = render(<CurrencyTableFilterOptions />, { initialState });
 
     const supportedInTestButton = queryByTestId('supported-in-Test');
     fireEvent.press(supportedInTestButton);

@@ -1,15 +1,15 @@
 import React from 'react';
 import { Pressable } from 'react-native';
-import { styles } from './CurrencyListHeaderStyles.native';
+import { styles } from './CurrencyTableHeaderStyles.native';
 import Text from '@components/general/Text/Text.native';
 
-interface CurrencyListSortItemProps {
+interface CurrencyTableSortItemProps {
   title: string;
   active: boolean;
   onPress: () => void;
 }
 
-const CurrencyListSortItem = ({ title, active = false, onPress }: CurrencyListSortItemProps) => {
+const CurrencyTableSortItem = ({ title, active = false, onPress }: CurrencyTableSortItemProps) => {
   return (
     <Pressable 
       style={styles.sortOptionsItem}
@@ -24,4 +24,4 @@ const CurrencyListSortItem = ({ title, active = false, onPress }: CurrencyListSo
   );
 };
 
-export default CurrencyListSortItem;
+export default CurrencyTableSortItem;

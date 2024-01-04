@@ -1,10 +1,10 @@
 import React from 'react';
 import { render } from '@utils/TestLibraryUtils.native';
 import { initialState as mainState } from '@redux/MainState';
-import { mockCurrencyData } from '../__mocks__/CurrencyList';
-import CurrencyList from '../CurrencyList.native';
+import { mockCurrencyData } from '../__mocks__/CurrencyData';
+import CurrencyTable from '../CurrencyTable.native';
 
-describe('CurrencyList', () => {
+describe('CurrencyTable', () => {
   afterEach(() => {
     jest.clearAllMocks();
   })
@@ -18,7 +18,7 @@ describe('CurrencyList', () => {
         filterOptions: null
       } 
     };
-    const { queryByTestId } = render(<CurrencyList />, { initialState });
+    const { queryByTestId } = render(<CurrencyTable />, { initialState });
 
     mockCurrencyData.forEach(currency => {
       expect(queryByTestId(`currency-${currency.id}`)).toBeTruthy();
@@ -34,7 +34,7 @@ describe('CurrencyList', () => {
       } 
     };
 
-    const { queryByTestId } = render(<CurrencyList />, { initialState });
+    const { queryByTestId } = render(<CurrencyTable />, { initialState });
 
     mockCurrencyData.forEach(currency => {
       if (currency.supportedInUS && currency.supportedInTest) {
@@ -56,7 +56,7 @@ describe('CurrencyList', () => {
       } 
     };
 
-    const { queryByTestId } = render(<CurrencyList />, { initialState });
+    const { queryByTestId } = render(<CurrencyTable />, { initialState });
 
     mockCurrencyData.forEach(currency => {
       if (!currency.supportedInUS && currency.supportedInTest) {
@@ -78,7 +78,7 @@ describe('CurrencyList', () => {
       } 
     };
 
-    const { queryByTestId } = render(<CurrencyList />, { initialState });
+    const { queryByTestId } = render(<CurrencyTable />, { initialState });
 
     mockCurrencyData.forEach(currency => {
       if (currency.supportedInUS && !currency.supportedInTest) {
@@ -100,7 +100,7 @@ describe('CurrencyList', () => {
       } 
     };
 
-    const { queryByTestId } = render(<CurrencyList />, { initialState });
+    const { queryByTestId } = render(<CurrencyTable />, { initialState });
 
     mockCurrencyData.forEach(currency => {
       if (!currency.supportedInUS && !currency.supportedInTest) {

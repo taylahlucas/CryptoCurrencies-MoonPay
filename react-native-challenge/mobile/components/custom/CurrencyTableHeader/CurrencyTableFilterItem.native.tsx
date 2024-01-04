@@ -1,16 +1,16 @@
 import React from 'react';
 import { View, Pressable } from 'react-native';
-import { styles } from './CurrencyListHeaderStyles.native';
+import { styles } from './CurrencyTableHeaderStyles.native';
 import Text from '@components/general/Text/Text.native';
 
-interface CurrencyListFilterItemProps {
+interface CurrencyTableFilterItemProps {
   testID: string;
   title: string;
   active: boolean;
   onPress: () => void;
 };
 
-const CurrencyListFilterItem = ({ testID, title, active = false, onPress }: CurrencyListFilterItemProps) => {
+const CurrencyTableFilterItem = ({ testID, title, active = false, onPress }: CurrencyTableFilterItemProps) => {
   return (
     <View testID={testID} style={styles.filterItemContainer}>
       <Pressable 
@@ -25,4 +25,4 @@ const CurrencyListFilterItem = ({ testID, title, active = false, onPress }: Curr
   );
 };
 
-export default CurrencyListFilterItem;
+export default CurrencyTableFilterItem;

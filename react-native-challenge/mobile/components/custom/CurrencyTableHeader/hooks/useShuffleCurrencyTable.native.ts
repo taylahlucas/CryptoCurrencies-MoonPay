@@ -2,11 +2,11 @@ import useMainDispatch from '@redux/hooks/useMainDispatch';
 import useMainState from '@redux/hooks/useMainState';
 
 
-const useShuffleCurrencyList = () => {
+const useShuffleCurrencyTable = () => {
   const { setFilteredCurrencyData } = useMainDispatch();
   const { filteredCurrencyData } = useMainState();
 
-  const shuffleCurrencyList = () => {
+  const shuffleCurrencyTable = () => {
     const updatedCurrencyData = [...filteredCurrencyData];
 
     updatedCurrencyData.forEach((item, index) => {
@@ -20,7 +20,7 @@ const useShuffleCurrencyList = () => {
     setFilteredCurrencyData(updatedCurrencyData);
   };
 
-  return { shuffleCurrencyList };
+  return { shuffleCurrencyTable };
 };
 
-export default useShuffleCurrencyList;
+export default useShuffleCurrencyTable;

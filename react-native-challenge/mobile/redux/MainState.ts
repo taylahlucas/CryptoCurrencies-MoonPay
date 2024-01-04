@@ -6,6 +6,7 @@ export interface MainState {
   readonly filteredCurrencyData: CurrencyItem[];
   readonly filterOptions: FilterOptions;
   readonly sortOptions: SortOptions;
+  readonly isTablet: boolean;
 }
 
 export const initialState: MainState = {
@@ -18,7 +19,8 @@ export const initialState: MainState = {
   sortOptions: {
     code: 'none',
     name: 'none'
-  }
+  },
+  isTablet: false
 }
 
 const slice = createSlice({
@@ -36,6 +38,9 @@ const slice = createSlice({
     },
     setSortOptions: (state, action) => {
       state.sortOptions = action.payload;
+    },
+    setIsTablet: (state, action) => {
+      state.isTablet = action.payload;
     }
   }
 });
@@ -44,7 +49,8 @@ export const {
   setCurrencyData,
   setFilteredCurrencyData,
   setFilterOptions,
-  setSortOptions
+  setSortOptions,
+  setIsTablet
 } = slice.actions;
 
 export default slice.reducer;

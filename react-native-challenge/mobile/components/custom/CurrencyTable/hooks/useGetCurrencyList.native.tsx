@@ -3,7 +3,7 @@ import { Alert } from 'react-native';
 import axios from 'axios';
 import useMainDispatch from '@redux/hooks/useMainDispatch';
 
-const useGetCurrencyList = () => {
+const useGetCurrencyTable = () => {
   const { setCurrencyData, setFilteredCurrencyData } = useMainDispatch();
 
   useEffect(() => {
@@ -33,4 +33,4 @@ const useGetCurrencyList = () => {
   }, []); 
 };
 
-export default useGetCurrencyList;
+export default useGetCurrencyTable;

@@ -1,18 +1,18 @@
 import React from 'react';
 import { View } from 'react-native';
-import { styles } from './CurrencyListHeaderStyles.native';
-import CurrencyListFilterItem from './CurrencyListFilterItem.native';
+import { styles } from './CurrencyTableHeaderStyles.native';
+import CurrencyTableFilterItem from './CurrencyTableFilterItem.native';
 import useMainDispatch from '@redux/hooks/useMainDispatch';
 import useMainState from '@redux/hooks/useMainState';
 import { supportedInUSString, supportedInTestString } from '@utils/Constants';
 
-const CurrencyListFilterOptions = () => {
+const CurrencyTableFilterOptions = () => {
   const { setFilterOptions } = useMainDispatch();
   const { filterOptions } = useMainState();
 
   return (
     <View style={styles.filterOptionsContainer}>
-      <CurrencyListFilterItem
+      <CurrencyTableFilterItem
         testID={'supported-in-US'}
         title={supportedInUSString} 
         active={filterOptions.supportedInUS}
@@ -21,7 +21,7 @@ const CurrencyListFilterOptions = () => {
           supportedInUS: !filterOptions.supportedInUS
         })}
       />
-      <CurrencyListFilterItem 
+      <CurrencyTableFilterItem 
         testID={'supported-in-Test'}
         title={supportedInTestString}
         active={filterOptions.supportedInTest}
@@ -34,4 +34,4 @@ const CurrencyListFilterOptions = () => {
   );
 };
 
-export default CurrencyListFilterOptions;
+export default CurrencyTableFilterOptions;

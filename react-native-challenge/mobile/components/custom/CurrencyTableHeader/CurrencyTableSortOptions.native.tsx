@@ -3,16 +3,16 @@ import { View } from 'react-native';
 import useMainDispatch from '@redux/hooks/useMainDispatch';
 import useMainState from '@redux/hooks/useMainState';
 import { codeString, nameString } from '@utils/Constants';
-import { styles } from './CurrencyListHeaderStyles.native';
-import CurrencyListSortItem from './CurrencyListSortItem.native';
+import { styles } from './CurrencyTableHeaderStyles.native';
+import CurrencyTableSortItem from './CurrencyTableSortItem.native';
 
-const CurrencyListSortOptions = () => {
+const CurrencyTableSortOptions = () => {
   const { setSortOptions } = useMainDispatch();
   const { sortOptions } = useMainState();
   
   return (
     <View style={styles.sortOptionsContainer}>
-      <CurrencyListSortItem 
+      <CurrencyTableSortItem 
         title={codeString}
         active={sortOptions.code === 'ascend'}
         onPress={(): void => setSortOptions({
@@ -20,7 +20,7 @@ const CurrencyListSortOptions = () => {
           name: 'none'
         })}
       />
-      <CurrencyListSortItem 
+      <CurrencyTableSortItem 
         title={nameString}
         active={sortOptions.name === 'ascend'}
         onPress={(): void => setSortOptions({
@@ -32,4 +32,4 @@ const CurrencyListSortOptions = () => {
   );
 };
 
-export default CurrencyListSortOptions;
+export default CurrencyTableSortOptions;

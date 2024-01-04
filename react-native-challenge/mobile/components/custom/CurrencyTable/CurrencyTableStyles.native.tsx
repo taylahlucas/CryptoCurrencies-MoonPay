@@ -1,11 +1,10 @@
 import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
-  currencyList: {
+  CurrencyTable: {
     paddingBottom: 200
   },
   itemContainer: {
-    width: '100%',
     flexDirection: 'row',
     justifyContent: 'space-between',
     borderBottomColor: 'grey',
@@ -17,7 +16,7 @@ export const styles = StyleSheet.create({
     color: 'grey'
   },
   itemName: {
-    width: 220,
-    padding: 8,
+    width: '100%',
+    padding: 8
   }
 });

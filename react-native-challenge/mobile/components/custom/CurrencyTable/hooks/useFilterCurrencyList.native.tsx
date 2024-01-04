@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import useMainDispatch from '@redux/hooks/useMainDispatch';
 import useMainState from '@redux/hooks/useMainState';
 
-const useFilterCurrencyList = () => {
+const useFilterCurrencyTable = () => {
   const { setFilteredCurrencyData } = useMainDispatch();
   const { filteredCurrencyData, currencyData, filterOptions, sortOptions } = useMainState();
 
@@ -39,4 +39,4 @@ const useFilterCurrencyList = () => {
   }, [sortOptions]);
 };
 
-export default useFilterCurrencyList;
+export default useFilterCurrencyTable;

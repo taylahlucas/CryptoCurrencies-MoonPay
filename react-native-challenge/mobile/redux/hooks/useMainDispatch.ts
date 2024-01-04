@@ -3,7 +3,8 @@ import {
   setCurrencyData,
   setFilteredCurrencyData,
   setFilterOptions,
-  setSortOptions
+  setSortOptions,
+  setIsTablet
 } from '../MainState';
 import { useAppDispatch } from '../store';
 import { CurrencyItem, FilterOptions, SortOptions } from '../../utils/CustomInterfaces';
@@ -13,6 +14,7 @@ interface MainDispatch {
   setFilteredCurrencyData: (value: CurrencyItem[]) => void;
   setFilterOptions: (value: FilterOptions) => void;
   setSortOptions: (value: SortOptions) => void;
+  setIsTablet: (value: boolean) => void;
 }
 
 const useMainDispatch = (): MainDispatch => {
@@ -30,6 +32,9 @@ const useMainDispatch = (): MainDispatch => {
     },
     setSortOptions(value: SortOptions): void {
       dispatch(setSortOptions(value));
+    },
+    setIsTablet(value: boolean): void {
+      dispatch(setIsTablet(value));
     }
   }
 }
