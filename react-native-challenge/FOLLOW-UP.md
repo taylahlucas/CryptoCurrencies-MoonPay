@@ -22,11 +22,11 @@ Testing:
 
 ### Q) What's the command to start the application locally?
 
-npm install
-npx expo start
+- npm install
+- npm start
 
 To run tests:
-npm test
+- npm test
 
 ### Q) Any other comments we should read before evaluating your solution?
 
