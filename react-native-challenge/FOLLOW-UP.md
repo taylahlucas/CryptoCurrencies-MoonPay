@@ -22,6 +22,7 @@ Testing:
 
 ### Q) What's the command to start the application locally?
 
+npm install
 npx expo start
 
 To run tests:
@@ -29,7 +30,8 @@ npm test
 
 ### Q) Any other comments we should read before evaluating your solution?
 
-// TODO:
+The method for sorting a list allows for ascending/descending if the corresponding column is clicked twice.
+The method for shuffling iterates through each item in the list, takes the item at a random index and swaps it with the current index.
 
 ---
 
